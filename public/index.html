@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-AI Chat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar - 20% -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-title">Chat History</h2>
+                <button class="new-chat-btn" onclick="createNewChat()">
+                    + New Chat
+                </button>
+            </div>
+            <div class="chat-history" id="chatHistory">
+                <!-- Chat history items will be populated here -->
+            </div>
+        </div>
+
+        <!-- Main Chat - 80% -->
+        <div class="main-chat">
+            <div class="chat-header">
+                <div class="ai-selector">
+                    <label for="aiSelect">Choose AI:</label>
+                    <select id="aiSelect" class="ai-select">
+                        <option value="gpt-3.5">ChatGPT 3.5 (Free)</option>
+                        <option value="claude">Claude Sonnet (Free)</option>
+                        <option value="gemini">Google Gemini (Free)</option>
+                        <option value="llama">Meta LLaMA (Free)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="messages-container" id="messagesContainer">
+                <div class="empty-state">
+                    <h2>Welcome to Multi-AI Chat</h2>
+                    <p>Select an AI model and start your conversation!</p>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        class="message-input" 
+                        placeholder="Type your message here..."
+                        rows="1"
+                    ></textarea>
+                    <button id="sendBtn" class="send-btn" onclick="sendMessage()">
+                        ➤
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
